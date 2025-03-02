@@ -28,18 +28,3 @@ jobs:
 
       - name: Run Angular Tests
         run: npm run test -- --watch=false --browsers=ChromeHeadless
-
-  deploy:
-    needs: build_and_test
-    if: ${{ github.event.pull_request.head.ref == 'dev' }}
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install Vercel CLI
-        run: npm install -g vercel
-
-      - name: Deploy to Vercel
-        run: vercel --prod --confirm --token ${{ secrets.VERCEL_TOKEN }}
