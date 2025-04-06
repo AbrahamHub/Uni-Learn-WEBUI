@@ -1,16 +1,99 @@
-
-// Custom Theming for Angular Material
-// For more information: https://material.angular.io/guide/theming
+// Importar Angular Material para utilizar su sistema de temas
 @use '@angular/material' as mat;
 
-html {
-  @include mat.theme((
-    color: (
-      theme-type: light,
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Questrial,
-    density: 0,
-  ));
+// Brand Color
+$primary70: rgb(61, 203, 177);
+$secondary: rgb(255, 209, 48);
+
+//Color Shades
+$primary40: rgb(236, 151, 146);
+$primary60: rgb(229, 109, 103);
+$primary80: rgb(196, 42, 34);
+$primary100: rgb(152, 33, 26);
+
+//Object Color
+$black90: rgb(49, 49, 49);
+$black60: rgb(114, 114, 114);
+$black30: rgb(223, 223, 223);
+$white90: rgb(249, 249, 249);
+$white60: rgb(247, 247, 247);
+$white30: rgb(246, 246, 246);
+
+$error: rgb(254, 65, 109);
+$warning: rgb(160, 74, 227);
+$success: rgb(0, 221, 192);
+
+.celeste{
+  color: $primary70; 
 }
+
+.amarillo{
+color: $secondary;
+}
+
+.rosa1{
+  color: $primary40;
+}
+
+.rosa2{
+  color: $primary40;
+}
+
+.naranja{
+  color: $primary80;
+}
+
+.rojo{
+  color: $primary100;
+}
+
+.negro1{
+  color: $black90;
+}
+
+.negro2{
+  color: $black60;
+}
+
+.negro3{
+  color: $black30;
+}
+
+.blanco1{
+  color: $white90;
+}
+
+.blanco2{
+  color: $white60;
+}
+
+.blanco3{
+  color: $white30;
+}
+
+.error{
+  color: $error;
+}
+
+.advertencia{
+  color: $warning;
+}
+
+.exito{
+  color: $success;
+}
+
+$primary-palette: mat.define-palette(mat.$green-palette, 500, 100, 700); 
+$secondary-palette: mat.define-palette(mat.$amber-palette, 500, 100, 700); 
+$tertiary-palette: mat.define-palette(mat.$blue-palette, 500, 100, 700); 
+
+// Crear el tema de Angular Material usando las paletas personalizadas
+@include mat.theme((
+  color: (
+    theme-type: light,
+    primary: $primary70,
+    secondary: $secondary
+  ),
+  typography: Questrial,
+  density: 0,
+));
