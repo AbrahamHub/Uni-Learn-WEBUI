@@ -83,10 +83,6 @@ color: $secondary;
   color: $success;
 }
 
-$primary-palette: mat.define-palette(mat.$green-palette, 500, 100, 700); 
-$secondary-palette: mat.define-palette(mat.$amber-palette, 500, 100, 700); 
-$tertiary-palette: mat.define-palette(mat.$blue-palette, 500, 100, 700); 
-
 // Crear el tema de Angular Material usando las paletas personalizadas
 @include mat.theme((
   color: (
