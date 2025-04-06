@@ -1,0 +1,97 @@
+<div class="wrapper">
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="primary">Uni</span>.Learn
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Inicio</a>
+        <a href="#" class="nav-link">Cursos</a>
+        <a href="#" class="nav-link">Profesores</a>
+        <a href="#" class="nav-link">Programas Educativos</a>
+      </div>
+      <div class="auth-buttons">
+        <button class="btn-secondary">Iniciar Sesión</button>
+        <button class="btn-primary">Registrarse</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <span class="badge">✨ La mejor plataforma de aprendizaje</span>
+          <h1>Aprende nuevas habilidades con los mejores instructores</h1>
+          <p class="hero-text">
+            Descubre más de 1000 cursos de alta calidad impartidos por expertos de la industria y mejora tus habilidades hoy mismo.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn-primary btn-lg">Explorar Cursos</button>
+            <button class="btn-secondary btn-lg">Ver Demo</button>
+          </div>
+          <div class="stats">
+            <div class="stat-item">
+              <h3>20k+</h3>
+              <p>Estudiantes</p>
+            </div>
+            <div class="stat-item">
+              <h3>500+</h3>
+              <p>Cursos</p>
+            </div>
+            <div class="stat-item">
+              <h3>250+</h3>
+              <p>Instructores</p>
+            </div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1771&q=80"
+            alt="Estudiantes aprendiendo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-courses">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <span class="section-badge">Cursos Destacados</span>
+            <h2>Los cursos más populares</h2>
+            <p>Explora los cursos más demandados por nuestra comunidad</p>
+          </div>
+          <button class="btn-secondary">Ver todos los cursos</button>
+        </div>
+        <div class="courses-grid">
+          <div class="course-card" *ngFor="let course of courses">
+            <div class="course-image">
+              <img [src]="course.image" [alt]="course.title" />
+              <span class="course-category">{{ course.category }}</span>
+            </div>
+            <div class="course-content">
+              <div class="course-info">
+                <div class="course-meta">
+                  <span class="course-level">{{ course.level }}</span>
+                  <span class="course-duration">{{ course.duration }}</span>
+                </div>
+                <h3>{{ course.title }}</h3>
+                <p>{{ course.description }}</p>
+              </div>
+              <div class="course-footer">
+                <div class="instructor">
+                  <img
+                    [src]="course.instructor.avatar"
+                    [alt]="course.instructor.name"
+                  />
+                  <span>{{ course.instructor.name }}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
